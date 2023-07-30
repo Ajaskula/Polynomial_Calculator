@@ -1,5 +1,3 @@
-# Polynomial_Calculator
-
 # Introduction
 A monomial of variable x is an expression of the form ax^n, where a is the coefficient and n is the degree of the monomial. The value of n, known as the degree of the monomial, is a non-negative integer. A monomial with a coefficient equal to 0 is called the zero monomial.
 
@@ -22,13 +20,14 @@ The input data of the program is a sequence of lines with commands, terminated b
 A line for calculating the sum starts with the + character, and a line for calculating the product starts with the * character. The subsequent characters until the end of the line are the representation of the argument of the command.
 
 The syntax for representing a polynomial is described by the following extended Backus-Naur Form (BNF) notation, with the starting symbol <wielomian>:
-
+```
 <wielomian> ::= "0" | [ "-" ] <jednomian> { <operacja> <jednomian> }
 <operacja> ::= "+" | "-"
 <jednomian> ::= "1" | <dużo> | [ <dużo> ] "x" [ "^" <dużo> ]
 <dużo> ::= "1" <cyfra> { <cyfra> } | <cyfra od 2 do 9> { <cyfra> }
 <cyfra> ::= "0" | "1" | <cyfra od 2 do 9>
 <cyfra od 2 do 9> ::= "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+```
 Curly braces {} represent zero or more repetitions, square brackets [] indicate optional parts, and the vertical bar | denotes alternatives. Auxiliary symbols are enclosed in angle brackets, and terminal symbols are enclosed in double quotes. The character between double quotes represents the corresponding symbol in the notation.
 
 Additionally, monomials in the polynomial are ordered in descending order of their degrees.
@@ -39,8 +38,9 @@ There may be any number of spaces in the command line. However, a non-empty sequ
 For each executed command, the program writes one line to the output with its result. The syntax for representing a polynomial in the output is the same as in the input. There is one space before and after the symbol + or - in the productions of the auxiliary symbol <operacja>. Apart from that, there are no other spaces in the output.
 
 # Compilation
-
-gcc @opcje -DPOLA=4 -DWIERSZE=10 -DKOLUMNY=7 -DWYBOR=234 zadanie2.c -o zadanie2
+```
+gcc @opcje -DPOLA=4 -DWIERSZE=10 -DKOLUMNY=7 -DWYBOR=234 Polynomial_Calculator.c -o Polynomial_Calculator
+```
 
 # Examples
 Example input data files with sample commands are provided as .in files, and the expected output for each example is provided as .out files.
